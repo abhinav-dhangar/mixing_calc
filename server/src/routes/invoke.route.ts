@@ -1,13 +1,10 @@
-import { invokeController } from "@src/controllers/invoke.controller"
-import express from "express"
+import { invokeController } from "@src/controllers/invoke.controller";
+import { invoke2Controller } from "@src/controllers/invoke2.controller";
+import express from "express";
 
+const llmRouter = express.Router();
 
-const llmRouter = express.Router()
+llmRouter.post("/invoke", invokeController);
+llmRouter.post("/invoke2", invoke2Controller);
 
-
-
-
-llmRouter.post("/invoke",invokeController)
-
-
-export {llmRouter}
+export { llmRouter };
